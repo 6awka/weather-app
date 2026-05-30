@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background-size: 200% 200%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.weather-card.show {
+  animation: fadeIn 1s ease;
+}
+
+p {
+  color: white;
+  margin: 0;
+  font-weight: bold;
+}
+
+.city {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.weather {
+  font-size: 56px;
+  font-weight: bold;
+  letter-spacing: -4px;
+}
+
+.humidity {
+  font-size: small;
+}
+
+.feelsLike {
+  font-size: small;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+
+  animation: fadeIn 0.5s ease;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+input {
+  width: 100%;
+  padding: 9px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  border: 1px solid #ddd;
+}
+
+input:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+input:hover {
+  border-color: #bbb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  width: auto;
+  padding-inline: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #120a8f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+  box-sizing: border-box;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+h1 {
+  color: white;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
