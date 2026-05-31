@@ -14,8 +14,15 @@ async function search() {
 
     const card = document.querySelector(".weather-card");
     const data = await response.json();
+    const cityValid = data.nearest_area[0].region[0].value;
+
+    if (!cityValid.includes(input.value)) {
+      city.textContent = "City not found";
+      return;
+    }
 
     console.log(data.current_condition[0]);
+    console.log(data.nearest_area[0].region[0]);
 
     city.textContent = input.value;
 
@@ -71,3 +78,10 @@ btnSearch.addEventListener("click", () => {
   const city = input.value;
   search();
 });
+
+input.addEventListener ("keydown", (e) => {
+  if (e.key === "Enter") {
+    const city = input.value;
+    search();
+  }
+})
