@@ -29,7 +29,7 @@ async function search() {
     weather.textContent = data.current_condition[0].temp_C + " °C";
 
     const description = data.current_condition[0].weatherDesc[0].value;
-    let emoji = "☀️";
+    let emoji = "";
 
     if (description.includes("Sunny")) {
       emoji = "☀️";
